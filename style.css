@@ -20,7 +20,7 @@ h1, h2, h3, p { margin-top: 0; }
 .section-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: clamp(50px, 8vw, 105px); }
 .section-header .eyebrow { color: #657078; padding-top: 12px; }
 h2 { font-size: clamp(42px, 6vw, 84px); line-height: .93; letter-spacing: -.065em; text-align: right; margin-bottom: 0; }
-.project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 42px); }
+.project-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 42px); }
 .project-button { aspect-ratio: .82; position: relative; display: block; overflow: hidden; border-radius: 28px; background: var(--ink); color: var(--paper); isolation: isolate; text-decoration: none; box-shadow: 0 10px 0 rgba(16,24,32,.1); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
 .project-button img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .35s ease; }
 .project-button::after { content: ""; position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to top, rgba(16,24,32,.9), transparent); transform: translateY(100%); transition: transform .35s ease; }
@@ -30,9 +30,11 @@ h2 { font-size: clamp(42px, 6vw, 84px); line-height: .93; letter-spacing: -.065e
 .button-caption b { flex: none; font-size: .72em; color: var(--lime); }
 .project-button:hover, .project-button:focus-visible { transform: translateY(-10px) rotate(-1.5deg); box-shadow: 0 20px 0 rgba(16,24,32,.12); outline: none; }
 .smash-button:hover, .smash-button:focus-visible { transform: translateY(-10px) rotate(1.5deg); }
+.candle-button:hover, .candle-button:focus-visible { transform: translateY(-10px) rotate(.8deg); }
 .project-button:hover img, .project-button:focus-visible img { transform: scale(1.075); filter: saturate(1.08); }
 .project-button:hover::after, .project-button:focus-visible::after, .project-button:hover .button-caption, .project-button:focus-visible .button-caption { transform: translateY(0); }
 
 .footer { display: flex; padding: 30px clamp(24px, 8vw, 124px) 48px; justify-content: space-between; align-items: center; gap: 25px; border-top: 1px solid #d7d5cf; font: 11px var(--mono); text-transform: uppercase; letter-spacing: .05em; }.footer p { margin: 0; }.footer > a { text-decoration: none; }.kofi-wrap { min-width: 145px; }
 
+@media (max-width: 900px) and (min-width: 701px) { .project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }.candle-button { grid-column: 1 / -1; width: calc(50% - clamp(9px, 1.5vw, 21px)); justify-self: center; } }
 @media (max-width: 700px) { .section-header { display: block; }.section-header .eyebrow { padding: 0; }.section-header h2 { text-align: left; }.project-list { grid-template-columns: 1fr; gap: 22px; }.project-button { aspect-ratio: 1.15; border-radius: 20px; }.button-caption { transform: translateY(0); font-size: 27px; }.project-button::after { transform: translateY(0); }.footer { flex-wrap: wrap; padding-bottom: 36px; }.kofi-wrap { width: 100%; }.footer .kofi-button { margin-left: 0; } }
